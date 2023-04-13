@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 import {Box, Pressable, HStack, VStack, Text} from 'native-base';
 
-import {navigate} from '../../routes';
+import {navigate} from '../../routes/index';
 import type {PropertyParams} from './types';
 import SearchBar from '../../components/SearchBar';
 

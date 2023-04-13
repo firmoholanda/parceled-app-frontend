@@ -1,7 +1,12 @@
 import React from 'react';
 import {Box, HStack, Text, VStack} from 'native-base';
 
-function PropertyDetails({route}) {
+import {RouteProp, useRoute} from '@react-navigation/native';
+
+import type {RouteParams} from './types';
+
+function PropertyDetails() {
+  const route = useRoute<RouteProp<RouteParams, 'params'>>();
   const {item} = route.params;
 
   const itemKeyValues = Object.entries(item);

@@ -11,7 +11,9 @@ import {
 } from 'native-base';
 import {TextInput} from 'react-native-gesture-handler';
 
-const SearchBar = ({onChangeSearchBarText}) => {
+import type {SearchBarParams} from './types';
+
+const SearchBar = ({onChangeSearchBarText}: SearchBarParams) => {
   const refInput = useRef<TextInput>(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -52,8 +54,8 @@ const SearchBar = ({onChangeSearchBarText}) => {
           onFocus={handleFocus}
           onChangeText={onChangeSearchBarText}
           placeholder="search for property"
-          width="90%"
-          borderRadius="4"
+          width="100%"
+          borderRadius="6"
           py="3"
           px="1"
           fontSize="14"
@@ -61,7 +63,7 @@ const SearchBar = ({onChangeSearchBarText}) => {
           InputRightElement={renderInputRightElement}
         />
       </VStack>
-      <Divider />
+      <Divider shadow="9" />
     </Box>
   );
 };
