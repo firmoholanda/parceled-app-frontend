@@ -2,27 +2,12 @@
 parceled sr. react code challenge - 2023
 
 
-## 📡 technologies used
-
-- node.js
--	react
--   react native
--	react-dom
--	react-create-app
--	npm
--	lint
--   babel
--	es6
-- git
-
-node.js, react, react-dom, react-create-app, npm, css, es6, webpack and git was used on this project.
-
+## 📡 galery
 
 
 ## 🚀 the project
 
 this project can be found in https://github.com/firmoholanda/ParceledApp
-
 
 
 ## 🔨 instructions
