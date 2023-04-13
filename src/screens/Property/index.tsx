@@ -1,16 +1,30 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 import {Box, Pressable, HStack, VStack, Text} from 'native-base';
 
 import {navigate} from '../../routes';
 import type {PropertyParams} from './types';
+import SearchBar from '../../components/SearchBar';
 
 const propertiesList = require('../../utils/properties.json');
 
 function Property() {
+  const [filteredPropertiesList, setFilteredPropertiesList] =
+    useState<PropertyParams[]>(propertiesList);
+
   const handlePress = useCallback((item: PropertyParams) => {
     navigate('PropertyDetais', {item});
   }, []);
+
+  const onChangeSearchBarText = (text: string) => {
+    const filteredList = propertiesList.filter((item: PropertyParams) => {
+      const itemValues = Object.values(item).join('').toLowerCase();
+      const formattedText = text.toLowerCase();
+
+      return itemValues.indexOf(formattedText) > -1;
+    });
+    setFilteredPropertiesList(filteredList);
+  };
 
   const renderItem = useCallback(
     ({item}: {item: PropertyParams}) => {
@@ -41,8 +55,9 @@ function Property() {
 
   return (
     <SafeAreaView>
+      <SearchBar onChangeSearchBarText={onChangeSearchBarText} />
       <FlatList
-        data={propertiesList}
+        data={filteredPropertiesList}
         renderItem={renderItem}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={itemSeparator}

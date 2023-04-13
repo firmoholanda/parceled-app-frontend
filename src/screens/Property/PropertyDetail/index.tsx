@@ -4,10 +4,7 @@ import {Box, HStack, Text, VStack} from 'native-base';
 function PropertyDetails({route}) {
   const {item} = route.params;
 
-  console.log('item', item);
-
   const itemKeyValues = Object.entries(item);
-  console.log('itemKeyValues', itemKeyValues);
 
   return (
     <Box>
