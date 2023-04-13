@@ -1,41 +1,32 @@
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {navigationRef} from './routes';
 
 import {NativeBaseProvider} from 'native-base';
 
 import Property from './screens/Property';
+import PropertyDetails from './screens/Property/PropertyDetail';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+const Stack = createNativeStackNavigator();
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function App() {
   return (
     <NativeBaseProvider>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}
-        />
-      </SafeAreaView>
-      <Property />
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator initialRouteName="Property">
+          <Stack.Screen
+            name="Property"
+            component={Property}
+            options={{title: 'property list'}}
+          />
+          <Stack.Screen
+            name="PropertyDetais"
+            component={PropertyDetails}
+            options={{title: 'property details'}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
