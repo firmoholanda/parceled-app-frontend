@@ -8,7 +8,7 @@ parceled sr. react code challenge - 2023
 
 ## 🚀 the project
 
-this project can be found in https://github.com/firmoholanda/ParceledApp
+this project can be found in https://github.com/firmoholanda/parceled-app-frontend
 
 
 ## 🔨 instructions
@@ -47,9 +47,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## 🤝 contributing
 
-contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](https://github.com/firmoholanda/ParceledApp/development/issues).
+contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](https://github.com/firmoholanda/parceled-app-frontend/development/issues).
 
-1. fork it (https://github.com/firmoholanda/ParceledApp/fork)
+1. fork it (https://github.com/firmoholanda/parceled-app-frontend/fork)
 2. create your working branch (git checkout -b [choose-a-name])
 3. commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. push to the branch (git push origin [chosen-name])
@@ -71,4 +71,4 @@ give a ⭐️ if you like this project!
 
 ## 📝 license
 
-this project is [MIT](https://github.com/firmoholanda/ParceledApp/development/license.txt) licensed.
+this project is [MIT](https://github.com/firmoholanda/parceled-app-frontend/development/license.txt) licensed.
