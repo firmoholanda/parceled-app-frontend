@@ -1,4 +1,4 @@
-import type {PropertyParams} from '../../../screens/Property/types';
+import type {PropertyParams} from '../../Property/types';
 
 export type RouteParams = {
   params: {
