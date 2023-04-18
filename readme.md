@@ -3,15 +3,7 @@ parceled sr. react code challenge - 2023
 
 
 ## 📡 galery
-
-
-https://user-images.githubusercontent.com/18573473/231894524-9f8fae01-062c-4b6d-bea8-58b734975671.mov
-
-
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-13 at 12 51 45](https://user-images.githubusercontent.com/18573473/231894026-c59b3e9f-fb56-41e0-8286-d1257f78096c.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-13 at 15 31 49](https://user-images.githubusercontent.com/18573473/231894042-8e0b6446-70ae-48f8-8f8e-3727e492f915.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-13 at 16 47 27](https://user-images.githubusercontent.com/18573473/231894052-a6509ca3-8a9a-46ec-a831-563f5f73631e.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-04-13 at 16 47 37](https://user-images.githubusercontent.com/18573473/231894063-f36f1d84-4eb0-46a0-b530-9f5bfb2b7b8b.png)
+![Screen Shot 2023-04-18 at 5 53 51 pm](https://user-images.githubusercontent.com/18573473/232914639-d48dccc9-2f94-420a-9be6-4d784aac5067.png)
 
 
 ## 🚀 the project
