@@ -1,4 +1,4 @@
-# 📃 ParceledApp
+# 📃 parceled-app-frontend
 parceled sr. react code challenge - 2023
 
 
