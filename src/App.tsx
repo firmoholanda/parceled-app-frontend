@@ -6,8 +6,9 @@ import {navigationRef} from './routes';
 import {NativeBaseProvider} from 'native-base';
 
 import Property from './screens/Property';
+import PropertyList from './screens/Property/PropertyList';
 import PropertyDetails from './screens/Property/PropertyDetail';
-
+import Documentation from './screens/Documentation';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -18,12 +19,22 @@ function App() {
           <Stack.Screen
             name="Property"
             component={Property}
-            options={{title: 'property list'}}
+            options={{title: 'properties home'}}
+          />
+          <Stack.Screen
+            name="PropertyList"
+            component={PropertyList}
+            options={{title: 'property List'}}
           />
           <Stack.Screen
             name="PropertyDetais"
             component={PropertyDetails}
             options={{title: 'property details'}}
+          />
+          <Stack.Screen
+            name="Documentation"
+            component={Documentation}
+            options={{title: 'documentation'}}
           />
         </Stack.Navigator>
       </NavigationContainer>

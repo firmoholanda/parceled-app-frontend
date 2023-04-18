@@ -1,67 +1,46 @@
-import React, {useCallback, useState} from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
-import {Box, Pressable, HStack, VStack, Text} from 'native-base';
+import React, {useEffect, useState} from 'react';
+import {SafeAreaView} from 'react-native';
+import {Box, HStack, Text} from 'native-base';
 
-import {navigate} from '../../routes/index';
+import Menu from '../../components/Menu';
+import Footer from '../../components/Footer';
 import type {PropertyParams} from './types';
-import SearchBar from '../../components/SearchBar';
 
-const propertiesList = require('../../utils/properties.json');
+const apiURL = 'http://localhost:3000/properties';
 
 function Property() {
-  const [filteredPropertiesList, setFilteredPropertiesList] =
-    useState<PropertyParams[]>(propertiesList);
+  const [propertiesList, setPropertiesList] = useState<PropertyParams[]>([]);
 
-  const handlePress = useCallback((item: PropertyParams) => {
-    navigate('PropertyDetais', {item});
-  }, []);
+  const fetchProperties = async () => {
+    const response = await fetch(apiURL);
+    const data = await response.json();
 
-  const onChangeSearchBarText = (text: string) => {
-    const filteredList = propertiesList.filter((item: PropertyParams) => {
-      const itemValues = Object.values(item).join('').toLowerCase();
-      const formattedText = text.toLowerCase();
-
-      return itemValues.indexOf(formattedText) > -1;
-    });
-    setFilteredPropertiesList(filteredList);
+    setPropertiesList(data);
   };
 
-  const renderItem = useCallback(
-    ({item}: {item: PropertyParams}) => {
-      return (
-        <Pressable onPress={() => handlePress(item)} key={item.id}>
-          <Box p="2">
-            <HStack space={[2, 3]} justifyContent="space-between">
-              <VStack>
-                <Text fontSize="md" color="coolGray.800" bold>
-                  {item.address}
-                </Text>
-                <Text color="coolGray.600">{item.owner}</Text>
-              </VStack>
-              <Text fontSize="xs" color="coolGray.800" alignSelf="flex-start">
-                {item.id}
-              </Text>
-            </HStack>
-          </Box>
-        </Pressable>
-      );
-    },
-    [handlePress],
-  );
-
-  const itemSeparator = useCallback(() => {
-    return <Box m="2" borderBottomWidth="1" borderColor="muted.300" />;
+  useEffect(() => {
+    fetchProperties();
   }, []);
 
   return (
     <SafeAreaView>
-      <SearchBar onChangeSearchBarText={onChangeSearchBarText} />
-      <FlatList
-        data={filteredPropertiesList}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        ItemSeparatorComponent={itemSeparator}
-      />
+      <Menu params={propertiesList} />
+      <Box p={4} display="flex" alignItems="center">
+        <Text p={4} fontSize="xl">
+          this is the react native component for the parceled sr. react code
+          challenge - 2023. please click on property to see the list of
+          properties available in the app.
+        </Text>
+        <HStack space={2}>
+          <Text>total properties available:</Text>
+          <Text bold>{propertiesList.length}</Text>
+        </HStack>
+        <HStack space={2}>
+          <Text>api url:</Text>
+          <Text bold>{apiURL}</Text>
+        </HStack>
+        <Footer />
+      </Box>
     </SafeAreaView>
   );
 }
